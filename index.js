@@ -10,3 +10,20 @@ function moveDodgerRight(){
     dodgerRight.style.left = '370px';
 }
 moveDodgerRight();
+
+const dodgerRight = document.getElementById("dodger");
+function moveDodgerRight() {
+    const rightValue = dodger.style.left.replace('px', '');
+    const right = parseInt(rightValue, 10);
+
+    if (right <= 360){
+        dodgerRight.style.left = `${right + 1}px`
+    }
+}
+
+document.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowRight') {
+        moveDodgerRight()
+    }
+})
+
